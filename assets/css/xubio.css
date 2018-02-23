@@ -1,0 +1,35 @@
+div.overlay-xubio-woo {
+    display: none;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-color: rgba(26, 24, 24, 0.55);
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+div.overlay-content-xubio-woo {
+    position: relative;
+    top: 25%;
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+    background-color: #fff;
+    height: 25%;
+}
+div.overlay-content-xubio-woo img {
+    display: none;
+}
+div.overlay-content-xubio-woo .message, div.overlay-content-xubio-woo img {
+    position: relative;
+    top: 25%;
+}
+div.overlay-content-xubio-woo .close {
+    display: none;
+    top: 10px;
+    right: 10px;
+    position: absolute;
+    font-size: 30px;
+}

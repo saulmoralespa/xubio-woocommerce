@@ -17,8 +17,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 if (!defined('XWSMP_XUBIO_WOOCOMMERCE_PLUGIN_VERSION')){
 	define('XWSMP_XUBIO_WOOCOMMERCE_PLUGIN_VERSION', '1.0.0');
 }
-add_action('plugins_loaded', 'xwsmp_xubio_woocommerce_load');
-function xwsmp_xubio_woocommerce_load(){
+add_action('init', 'xwsmp_xubio_woocommerce_init');
+function xwsmp_xubio_woocommerce_init(){
 	load_plugin_textdomain( 'xubio-woocommerce', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 	if(!requeriments_xwsmp_xubio_woocommerce()){
 		return;
@@ -79,7 +79,7 @@ function xwsmp_xubio_woocommerce()
 	if (!isset($plugin))
 	{
 		require_once('includes/class-xubio-plugin.php');
-		$plugin = new XUBIO_PLUGIN(__FILE__,XWSMP_XUBIO_WOOCOMMERCE_PLUGIN_VERSION);
+		$plugin = new Xubio_Plugin(__FILE__,XWSMP_XUBIO_WOOCOMMERCE_PLUGIN_VERSION, 'Xubio Woocommerce');
 	}
 	return $plugin;
 }
