@@ -50,7 +50,7 @@ function requeriments_xwsmp_xubio_woocommerce()
 
 	if (version_compare(WC_VERSION, '3.0', '<')) {
 		if ( is_admin() && ! defined( 'DOING_AJAX' ) ) {
-			$wc_version = __( 'Xubio: Version 3.0 or greater of installed woocommerce is required.', 'tigo-money-woo' );
+			$wc_version = __( 'Xubio: Version 3.0 or greater of installed woocommerce is required.', 'xubio-woocommerce' );
 			do_action('notices_action_xwsmp_xubio', $wc_version);
 		}
 		return false;
