@@ -4,18 +4,6 @@
     <list default="true" id="5f837ab9-2c23-4e4c-97b6-25fd7488c2d9" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/includes/class-xubio-admin-tabs.php" afterPath="$PROJECT_DIR$/includes/class-xubio-admin-tabs.php" />
-      <change beforePath="$PROJECT_DIR$/includes/class-xubio-admin.php" afterPath="$PROJECT_DIR$/includes/class-xubio-admin.php" />
-      <change beforePath="$PROJECT_DIR$/includes/class-xubio-api-budget.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/class-xubio-api-cae.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/class-xubio-api-checkin.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/class-xubio-api-point-sale.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/class-xubio-api-proof-purchase.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/class-xubio-api-provider.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/class-xubio-api-purchase-order.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/class-xubio-api-receipt.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/class-xubio-api-send-transaction-mail.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/class-xubio-plugin.php" afterPath="$PROJECT_DIR$/includes/class-xubio-plugin.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -93,7 +81,7 @@
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="6" lean-forward="false" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
+              <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -283,12 +271,12 @@
       <workItem from="1519309909769" duration="36853000" />
       <workItem from="1519389474826" duration="766000" />
       <workItem from="1519420453312" duration="20905000" />
-      <workItem from="1519479673095" duration="10430000" />
+      <workItem from="1519479673095" duration="10529000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="89685000" />
+    <option name="totallyTimeSpent" value="89784000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="66" y="-5" width="1302" height="777" extended-state="6" />
@@ -615,7 +603,7 @@
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="6" lean-forward="false" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
+          <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
           <folding />
         </state>
       </provider>
