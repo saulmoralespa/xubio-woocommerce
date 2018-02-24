@@ -60,6 +60,7 @@ class Xubio_Admin
             'loadcredentials' => __('Making test connection...','xubio-woocommerce'),
             'loadSuccessCredentials' => __('Successful connection','xubio-woocommerce'),
             'loadFailCredentials' => __('Error: verify the credentials entered','xubio-woocommerce'),
+            'loadGetClients' => __('Consulting list of clients','xubio-woocommerce'),
         ) );
     }
 
@@ -69,22 +70,29 @@ class Xubio_Admin
             $client_id = trim($_POST['client_id']);
             $client_secret = trim($_POST['client_secret']);
             $access = base64_encode( $client_id . ":" . $client_secret );
-            $token = wp_safe_remote_post( xwsmp_xubio_woocommerce()->createUrl(), array('headers' => array( 'cache-control' => 'no-cache','content-type'  => 'application/x-www-form-urlencoded', 'authorization' => 'Basic '. $access ),'body' => array( 'grant_type' => 'client_credentials')));
-            $status = true;
-            if ( is_wp_error( $token ) ){
-                $status = false;
-            }
-            if ( $token['response']['code'] != 200 ){
-                $status = false;
-            }
+            $token = xwsmp_xubio_woocommerce()->getToken($access);
 
-            if ($status){
+            $status = true;
+            if (isset($token)){
                 update_option('xwsmp-client-id-xubio-woo',$client_id);
                 update_option('xwsmp-client-secret-xubio-woo',$client_secret);
+            }else{
+                $status = false;
             }
-
             echo json_encode(array('status' => $status));
 
+        }
+        if (isset($_POST['clients'])){
+            $clients = $_POST['clients'];
+            if ($clients == 'get'){
+                $token = xwsmp_xubio_woocommerce()->getToken();
+                $lists = wp_safe_remote_get( xwsmp_xubio_woocommerce()->createUrl('client'), array('headers' => array('cache-control' => 'no-cache', 'content-type' => 'application/json','authorization' => 'Bearer '. $token ) ));
+                $lists = wp_remote_retrieve_body( $lists );
+                $clients = json_decode($lists);
+                if (isset($clients->error))
+                    wp_die('');
+                echo $lists;
+            }
         }
         wp_die();
     }

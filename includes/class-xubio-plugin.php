@@ -122,13 +122,40 @@ class Xubio_Plugin
     }
 
 
-    public function createUrl($use = null)
+    public function createUrl($use = '')
     {
         $url = "https://xubio.com:443/API/1.1/";
-        if (is_null($use)){
+        if (empty($use))
             $url .= "TokenEndpoint";
-        }
+
+        if ($use == 'client')
+            $url .= "clienteBean";
         return $url;
+    }
+
+    public function getToken($access = null)
+    {
+        if (is_null($access)){
+            $client_id =  get_option('xwsmp-client-id-xubio-woo');
+            $client_secret = get_option('xwsmp-client-secret-xubio-woo');
+            $access = base64_encode( "$client_id:$client_secret" );
+        }
+        $token = wp_safe_remote_post( xwsmp_xubio_woocommerce()->createUrl(), array('headers' => array( 'cache-control' => 'no-cache','content-type'  => 'application/x-www-form-urlencoded', 'authorization' => 'Basic '. $access ),'body' => array( 'grant_type' => 'client_credentials')));
+
+        $token = wp_remote_retrieve_body( $token );
+        $token = json_decode($token);
+        if (!isset($token->access_token))
+            return null;
+        return $token->access_token;
+    }
+
+    public function log($msg = '')
+    {
+        $upload_dir = wp_upload_dir();
+        $file =  trailingslashit($upload_dir['basedir']) . 'xublio.txt';
+        $handle = fopen($file, 'a+');
+        fwrite($handle, $msg);
+        fclose($handle);
     }
 
     public function plugin_action_links( $links ) {

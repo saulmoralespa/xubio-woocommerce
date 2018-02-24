@@ -24,13 +24,13 @@ class Xubio_Admin_Configuration
                     <tr>
                         <th><?php echo __('Client id','xubio-woocommerce');?></th>
                         <td>
-                            <input type="text" name="client_id" value="" required>
+                            <input type="text" name="client_id" value="<?php echo get_option('xwsmp-client-id-xubio-woo'); ?>" required>
                         </td>
                     </tr>
                     <tr>
                         <th><?php echo __('Client secret','xubio-woocommerce');?></th>
                         <td>
-                            <input type="text" name="client_secret" value="" required>
+                            <input type="text" name="client_secret" value="<?php echo get_option('xwsmp-client-secret-xubio-woo'); ?>" required>
                         </td>
                     </tr>
                     </tbody>
