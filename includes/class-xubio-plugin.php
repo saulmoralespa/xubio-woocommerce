@@ -94,30 +94,12 @@ class Xubio_Plugin
     {
         require_once ($this->includes_path . 'class-xubio-admin.php');
         require_once ($this->includes_path . 'class-xubio-admin-configuration.php');
-        require_once ($this->includes_path . 'class-xubio-api-client.php');
-        require_once ($this->includes_path . 'class-xubio-api-send-transaction-mail.php');
-        require_once ($this->includes_path . 'class-xubio-api-receipt.php');
-        require_once ($this->includes_path . 'class-xubio-api-proof-purchase.php');
-        require_once ($this->includes_path . 'class-xubio-api-checkin.php');
-        require_once ($this->includes_path . 'class-xubio-api-purchase-order.php');
-        require_once ($this->includes_path . 'class-xubio-api-budget.php');
-        require_once ($this->includes_path . 'class-xubio-api-provider.php');
-        require_once ($this->includes_path . 'class-xubio-api-point-sale.php');
-        require_once ($this->includes_path . 'class-xubio-api-cae.php');
-
+        require_once ($this->includes_path . 'class-xubio-api-client.php');;
         require_once ($this->includes_path . 'class-xubio-admin-tabs.php');
+
         $this->Admin = new Xubio_Admin();
         $this->AdminConfiguration = new Xubio_Admin_Configuration();
         $this->apiClient = new Xubio_Api_Client();
-        $this->sendTransactionMail = new Xubio_Api_Send_Transaction_Mail();
-        $this->receipt = new Xubio_Api_Receipt();
-        $this->proofofpurchase = new Xubio_Api_Proof_Purchase();
-        $this->checkin = new Xubio_Api_Checkin();
-        $this->purchaseorder = new Xubio_Api_Purchase_Order();
-        $this->budget = new Xubio_Api_Budget();
-        $this->provider = new Xubio_Api_Provider();
-        $this->pointSale = new Xubio_Api_Point_Sale();
-        $this->cae = new Xubio_Api_Cae();
         $this->tabsMenu = new Xubio_Admin_Tabs();
     }
 

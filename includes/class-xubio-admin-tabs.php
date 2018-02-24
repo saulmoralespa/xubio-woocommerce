@@ -49,42 +49,7 @@ class Xubio_Admin_Tabs
             $client = xwsmp_xubio_woocommerce()->apiClient;
             $client->content();
         }
-        if ($this->tab == 'sendtransactionmail') {
-            $send = xwsmp_xubio_woocommerce()->sendTransactionMail;
-            $send->content();
-        }
-        if ($this->tab == 'receipt') {
-            $receipt = xwsmp_xubio_woocommerce()->receipt;
-            $receipt->content();
-        }
-        if ($this->tab == 'proofofpurchase') {
-            $proofofpurchase = xwsmp_xubio_woocommerce()->proofofpurchase;
-            $proofofpurchase->content();
-        }
-        if ($this->tab == 'checkin') {
-            $checkin = xwsmp_xubio_woocommerce()->checkin;
-            $checkin->content();
-        }
-        if ($this->tab == 'purchaseorder') {
-            $purchaseorder = xwsmp_xubio_woocommerce()->purchaseorder;
-            $purchaseorder->content();
-        }
-        if ($this->tab == 'budget') {
-            $budget = xwsmp_xubio_woocommerce()->budget;
-            $budget->content();
-        }
-        if ($this->tab == 'provider') {
-            $provider = xwsmp_xubio_woocommerce()->provider;
-            $provider->content();
-        }
-        if ($this->tab == 'pointofsale') {
-            $pointofsale = xwsmp_xubio_woocommerce()->pointSale;
-            $pointofsale->content();
-        }
-        if ($this->tab == 'cae') {
-            $cae = xwsmp_xubio_woocommerce()->cae;
-            $cae->content();
-        }
+
     }
 
     public function page_tabs($current = 'general')
@@ -93,15 +58,6 @@ class Xubio_Admin_Tabs
         $tabs = array(
             'general'   => array('config-' . $this->name, __("General", 'xubio-woocommerce')),
             'cient'  => array('configclient-' . $this->name, __("Client", 'xubio-woocommerce')),
-            'sendtransactionmail'  => array('configtransactionmail-' . $this->name, __("Send transaction by email", 'xubio-woocommerce')),
-            'receipt'  => array('configreceipt-' . $this->name, __("Receipt", 'xubio-woocommerce')),
-            'proofofpurchase'  => array('configproofofpurchase-' . $this->name, __("Proof of purchase", 'xubio-woocommerce')),
-            'checkin' => array('configcheckin-' . $this->name, __("Check in", 'xubio-woocommerce')),
-            'purchaseorder' => array('configpurchaseorder-' . $this->name, __("Purchase order", 'xubio-woocommerce')),
-            'budget' => array('configbudget-' . $this->name, __("Budget", 'xubio-woocommerce')),
-            'provider' => array('configprovider-' . $this->name, __("Provider", 'xubio-woocommerce')),
-            'pointofsale' => array('configpointofsale-' . $this->name, __("Point of sale", 'xubio-woocommerce')),
-            'cae' => array('configcae-' . $this->name, __("CAE", 'xubio-woocommerce')),
         );
         $html =  '<h2 class="nav-tab-wrapper">';
         foreach( $tabs as $tab => $name ){
